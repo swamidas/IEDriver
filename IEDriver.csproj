@@ -155,7 +155,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent />
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft\ILMerge\ilmerge" /target:exe /out:KIRK.exe IEDriver.exe Interop.SHDocVw.dll Microsoft.mshtml.dll</PostBuildEvent>
   </PropertyGroup>
 </Project>
