@@ -53,7 +53,18 @@ namespace IEDriver {
 	        }
         }
 
-	    private static void SaveToSetting(string user, string pwd)
+        /// <summary>
+        /// Creates encrypted user.config file in the following locations if IEDriver.exe is run :
+        /// 1. As an exe file - C:\Users\sitsgd\AppData\Local\IEDriver\IEDriver.exe_Url_azq2wh4am4qk1f1ald3xasocro1ifyi5
+        /// 2. From Visual Studio - C:\Users\sitsgd\AppData\Local\IEDriver\IEDriver.vshost.exe_Url_azq2wh4am4qk1f1ald3xasocro1ifyi5
+        /// 
+        /// Creates encrypted user.config file in the following locations if Kirk.exe is run :
+        /// C:\Users\sitsgd\AppData\Local\IEDriver\KIRK.exe_Url_2jhgzmuk32ci5k0clocgkrniv2elkcae
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="pwd"></param>
+        private static void SaveToSetting(string user, string pwd)
 	    {
 	        var config = ConfigurationManager.OpenExeConfiguration(
 	            ConfigurationUserLevel.PerUserRoamingAndLocal);
